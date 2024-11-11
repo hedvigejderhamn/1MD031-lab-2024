@@ -1,1 +1,137 @@
-Hello world
+<!DOCTYPE HTML>
+<html lang="en"> <!-- Root node-->
+   <head>
+       <title>Hedvigs hamburgare</title>
+       <meta charset="utf-8"/>
+       <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        img {
+            border: 1px solid #eee;
+            border-radius: 3px;
+        }
+
+       </style>
+   </head>
+   <body>
+        <header>
+            <h1> Välkommen till Hedvigs Hamburgare</h1>
+        </header>
+
+        <main>
+            <section>
+                <h3> Meny</h3>
+
+                
+                <p> Välj en av våra tre utsökta hamburgare:</p>
+
+
+
+
+                <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+                <div style="display: inline-block">
+                    <h4>Classic cheeseburger</h4>
+                    <img src = "/img/cheeseburger.png" style="max-width: 250px;">
+                    <ul style="max-width:250px" >
+                        <li>670 kcal</li>
+                        <li>Klassisk cheesburgare med svenskt nötkött</li>
+                        <li>Innehåller gluten</li>   
+                    </ul>
+                </div>
+                
+                <div style="display: inline-block">
+                    <h4>Dubbel cheeseburger</h4>
+                    <img src = "/img/dubble.png" style="max-width: 250px;">
+                    <ul style="max-width:250px">
+                        <li>920 kcal</li>
+                        <li>Cheesburgare med dubbelpuck svenskt nötkött</li>
+                        <li>Innehåller gluten</li>   
+                    </ul>
+                </div>
+
+                <div style="display: inline-block">
+                    <h4>Buffalo chicken</h4>
+                    <img src = "/img/chicken.png" style="max-width: 250px;">
+                    <ul style="max-width:250px" >
+                        <li>640 kcal</li>
+                        <li>Friterad kyckling med buffalosås och saltgurka</li>
+                        <li>Innehåller gluten</li>   
+                    </ul>
+                </div>  
+            </div>
+              
+            </section>
+            
+            <section>
+                <h3> Kundinformation </h3>
+                <p> Fyll i följande uppgifter för en snabb och smidig leverans:</p>
+
+                <h4> Leveransuppgifter:</h4>
+                <p>
+                    <label for="firstnamne">Fullständigt namn</label><br>
+                    <input type="text" id="firstname" name="firstname" required="required" placeholder="För- och Efternamn">
+                </p>
+
+                <p>
+                    <label for="email">E-mail</label><br>
+                    <input type="text" id="email" name="email" required="required" placeholder="E-mail adress">
+                </p>
+
+                <p>
+                    <label for="adress">Gatunamn</label><br>
+                    <input type="text" id="adress" name="adress" required="required" placeholder="Adress">
+                </p>
+                
+                <p>
+                    <label for="other">Adressnummer</label><br>
+                    <input type="number" id="other" name="number" required="required" placeholder="Number">
+                </p>
+
+                <br>
+
+                <p>
+                    <label for="payment">Betalningsalternativ</label><be>
+                    <select id="payment" name="payment">
+                        <option>Kortbetalning</option>
+                        <option>Swish</option> 
+                        <option>Klarna</option>
+                        <option>Faktura</option>
+                    </select>
+                 </p>
+
+                 <p> Ange kön: </p>
+                    
+                 <p>
+                    <input id="gender" name="gender" type="radio" value="man">
+                    <label for="gender">Man</label>
+                 </p>
+
+                 <p>
+                    <input id="gender" name="gender" type="radio" value="women">
+                    <label for="gender">Kvinna</label>
+                 </p>
+                    
+                 <p>
+                    <input id="gender" name="gender" type="radio" value="other" checked="checked">
+                    <label for="gender">Annat</label>
+                
+                 </p>
+
+            </section>
+
+            <button type="submit">
+                <img src="/img/button.png" style="max-width: 50px;" >
+                Lägg order!
+            </button>
+            
+        </main>
+
+        <hr>
+        <footer>
+            <p>&copy; 2024 Hedvig Ejderhamn Roupé </p>
+        </footer>
+             
+   </body>
+</html>
