@@ -2,6 +2,8 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 p {
@@ -12,23 +14,12 @@ h1 {
     color:#050300;
     text-align: center;
     font-size: 36pt;
-    
 }
 
-
-
-/* nav ul li {
-    display: inline-block;
-    background-color: grey;
-    padding: 1em;
-    margin: 1em;
-} */
-
 header {
-    margin:10px;
+    margin-bottom:10px;
     background-size: cover;
-    overflow: hidden;
-    width: 100%;
+    width: 100%; /* 100 % av skärmens bredd */
     height: 200px;
     position: relative;
     display: flex;
@@ -48,15 +39,6 @@ header h1 {
     position: absolute;
     width: 100%;
     color: black;
-
-}
-
-.gluten { 
-    font-weight: bold;
-}
-
-.lactose {
-    font-weight:bold
 }
 
 img {
@@ -64,40 +46,26 @@ img {
     border-radius: 3px;
 }
 
-#info{
-    margin: 10px;
+section{
+    margin: 20px;
     padding: 30px;
-    border: 5px dotted #050300;
 }
 
 #burgers {
-    margin: 10px;
-    padding: 30px;
     background-color:black;
     color:#eee;
     border: 5px solid hotpink;
 }
 
-
-button {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: pink;
+#info{
+    border: 5px dotted #050300;
 }
 
-button:hover {
-    background-color: pink;
-    color:hotpink;
-    outline: 3px solid hotpink; /* Lägg till en rosa kant */
-    outline-offset: 1px;
-    cursor: pointer;
-}
 
 .burger-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap:20px;
-
 }
 
 .burger-item{
@@ -114,4 +82,29 @@ button:hover {
     height: auto; /* Bevarar proportioner */
 }
 
+.gluten { 
+    font-weight: bold;
+}
 
+.lactose {
+    font-weight:bold
+}
+
+button {
+    margin-left:20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: pink;
+}
+
+button:hover {
+    background-color: pink;
+    color:hotpink;
+    outline: 3px solid hotpink; /* Lägg till en rosa kant */
+    outline-offset: 1px;
+    cursor: pointer;
+}
+
+footer{
+    margin-left:20px;
+}
