@@ -82,12 +82,8 @@ section{
     height: auto; /* Bevarar proportioner */
 }
 
-.gluten { 
+.ingredient { 
     font-weight: bold;
-}
-
-.lactose {
-    font-weight:bold
 }
 
 button {

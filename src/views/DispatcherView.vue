@@ -2,7 +2,15 @@
     <div id="orders">
       <div id="orderList">
         <div v-for="(order, key) in orders" v-bind:key="'order'+key">
-          #{{ key }}: {{ order.orderItems.join(", ") }}
+          <ul>
+            <li v-for="item in order.orderItems" :key="item.name">
+            {{ item.name }} ({{ item.amount }} st)
+            </li>
+          </ul>
+          <p>Namn: {{ order.customerInfo.firstname }}</p>
+          <p>E-mail: {{ order.customerInfo.email }}</p>
+          <p>Betalningsalternativ: {{ order.customerInfo.payment }}</p>
+          <p>Kön: {{ order.customerInfo.gender }}</p>
         </div>
         <button v-on:click="clearQueue">Clear Queue</button>
       </div>
@@ -21,10 +29,11 @@
     name: 'DispatcherView',
     data: function () {
       return {
-        orders: null,
+        orders: [],
       }
     },
     created: function () {
+
       socket.on('currentQueue', data =>
         this.orders = data.orders);
     },
@@ -40,6 +49,7 @@
   }
   </script>
   <style>
+
   #orderList {
     top:1em;
     left:1em;

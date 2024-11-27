@@ -1,21 +1,25 @@
 [{
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
-    "gluten": false
+    "name": "Classic Cheeseburger",
+    "kCal": 670,
+    "pic": "/img/cheeseburger.png",
+    "price": 90,
+    "lactose":false,
+    "gluten":true
 },
-{
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
-    "gluten": false
+
+{   "name": "Double Cheeseburger",
+    "kCal": 920,
+    "pic": "/img/dubble.png",
+    "price": 110,
+    "lactose":false,
+    "gluten":true
 },
-{
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
-    "gluten": false
+
+{   "name": "Buffalo Chicken",
+    "kCal": 640,
+    "pic": "/img/chicken.png",
+    "price": 95,
+    "lactose":true,
+    "gluten":true
+
 }]
