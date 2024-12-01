@@ -35,22 +35,20 @@ export default {
   data: function () {
   return {
     amountOrdered: 0,
-    orderedBurgers: {}
+    orderedBurgers: {},
     }
   },
 
   methods:{
     increaseOrder() {
       this.amountOrdered++;
-      this.$emit('orderedBurger', { name:   this.burger.name, 
-                                amount: this.amountOrdered 
-                              }
-    );
+      this.$emit('orderedBurger', { name:   this.burger.name, amount: this.amountOrdered });
     },
 
     decreaseOrder() {
       this.amountOrdered = Math.max(0, this.amountOrdered - 1);
-    }
+      this.$emit('orderedBurger', { name:   this.burger.name, amount: this.amountOrdered}); 
+    },
   },
 
    // Lägger till eller uppdaterar den specifika burgaren i orderedBurgers
@@ -62,8 +60,6 @@ export default {
       }
     }
   }
-
-
 
 </script>
 

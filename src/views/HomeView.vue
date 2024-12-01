@@ -32,7 +32,7 @@
                 <br>
                 <p>
                     <label for="payment">Betalningsalternativ</label>
-                    <select id="payment" v-model="formData.payment">
+                    <select id="payment" v-model="formData.payment" required="required">
                     <option value="Kortbetalning">Kortbetalning</option>
                     <option value="Swish">Swish</option>
                     <option value="Klarna">Klarna</option>
@@ -54,16 +54,15 @@
                  </p>
                 
 
-            
+            <p>Sätt ut din upphämtningsadress:</p>
             <div id="map-wrapper">
               <div id="map" v-on:click="setLocation">
                 <div
                   v-if="location.x !== 0 && location.y !== 0"
                   class="target-marker"
-                  :style="{ top: location.y + 'px', left: location.x + 'px' }">
+                  :style="{ top: location.y + 'px', left: location.x + 'px' }" required="required">
                   T
                 </div>
-              click here
               </div>
             </div>
           
@@ -72,8 +71,7 @@
                 <img src="/img/button.png" style="max-width: 50px;" >
                 Lägg order!
             </button>
-            
-
+          
             </form>
           </section>
         </main>
@@ -122,7 +120,8 @@ export default {
         email: '',
         payment: '',
         gender: 'other',},
-      location: {x:0, y:0}
+      location: { x: null, y: null },
+      errorMessage: "",
     }
   },
 
@@ -138,7 +137,24 @@ export default {
         console.log("Plats uppdaterad:", this.location);
     },
 
+    isOrderValid() {
+      if (Object.keys(this.orderedBurgers).length < 1) {
+        this.errorMessage = "Välj minst en hamburgare";
+        return false;
+      }
+      if (this.location.x===null && this.location.y ===null) {
+        this.errorMessage = "Välj en plats på kartan";
+        return false;
+      }
+      this.errorMessage = "";
+      return true;
+    },
+
     submitOrder() {
+      if (!this.isOrderValid()){
+        alert(this.errorMessage);
+        return;
+      }
       const orderItems = Object.entries(this.orderedBurgers).map(([name, amount]) => {
         return { name, amount };
       });
@@ -149,7 +165,12 @@ export default {
         customerInfo: this.formData,
         orderItems: orderItems,
         };
-      socket.emit("addOrder", orderData);
+
+    socket.emit("addOrder", orderData);
+
+    alert(`Din beställning har skickats! 
+      Ordernummer: ${orderData.orderId} 
+      Beställning: ${orderData.orderItems.map(item => `${item.name} (${item.amount})`).join(", ")}`);
     },
 
     getOrderNumber: function () {

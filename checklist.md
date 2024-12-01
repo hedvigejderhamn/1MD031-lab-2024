@@ -59,3 +59,7 @@ Your Dispatcher.vue file:
     - [x] the order information
     - [x] the customer information
 
+## Optional
+- [x] Only allow the order to be sent if all necessary information are provided
+- [x] Display receipt on the customer page as well
+

@@ -1,7 +1,8 @@
 <template>
     <div id="orders">
       <div id="orderList">
-        <div v-for="(order, key) in orders" v-bind:key="'order'+key">
+        <div v-for="(order, index) in orders" :key="'order'+index">
+          <h4>Order {{ index + 1 }}</h4>
           <ul>
             <li v-for="item in order.orderItems" :key="item.name">
             {{ item.name }} ({{ item.amount }} st)
@@ -11,6 +12,7 @@
           <p>E-mail: {{ order.customerInfo.email }}</p>
           <p>Betalningsalternativ: {{ order.customerInfo.payment }}</p>
           <p>Kön: {{ order.customerInfo.gender }}</p>
+          <hr>
         </div>
         <button v-on:click="clearQueue">Clear Queue</button>
       </div>
@@ -44,7 +46,7 @@
       changeStatus: function(orderId) {
         socket.emit('changeStatus', {orderId: orderId, status: "Annan status"});
 
-      }
+      },
     }
   }
   </script>
